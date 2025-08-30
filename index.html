@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>嘉義包車資訊 - Zhan Taxi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background: #ffcc00;
+      padding: 15px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .lang-switch button {
+      margin-left: 8px;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      background: white;
+      border-radius: 5px;
+    }
+    .banner {
+      text-align: center;
+      padding: 30px 15px;
+      background: #fff3b0;
+    }
+    .routes {
+      padding: 20px;
+    }
+    .route {
+      background: white;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .route img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .route h3 { margin-top: 0; }
+    .contact {
+      text-align: center;
+      padding: 20px 15px;
+    }
+    .contact h2 { margin-bottom: 15px; }
+    .contact a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 8px;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .contact a.line { background: #00c300; }
+    .contact a.whatsapp { background: #25d366; }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">嘉義包車資訊</h1>
+    <div class="lang-switch">
+      <button onclick="setLang('zh')">🇹🇼 中文</button>
+      <button onclick="setLang('en')">🇬🇧 English</button>
+      <button onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
+    </div>
+  </header>
+
+  <section class="banner">
+    <h2 id="slogan">舒適專車 · 安全可靠 · 多語服務</h2>
+  </section>
+
+  <section class="routes">
+    <div class="route">
+      <h3 id="route1">🚖 嘉義市區一日遊</h3>
+      <p id="desc1">檜意森活村、文化路夜市、嘉義公園。<br>NT$ 2,000起</p>
+      <img src="https://www.fbs168.com/webroot/file/ueditor/20211210/1639123218308523.jpg" alt="嘉義檜意森活村">
+    </div>
+    <div class="route">
+      <h3 id="route2">🌲 阿里山一日遊</h3>
+      <p id="desc2">阿里山森林遊樂區、奮起湖老街。<br>NT$ 4,000 起</p>
+      <img src="https://www.ali-nsa.net/image/5856/1024x768" alt="阿里山小火車">
+    </div>
+    <div class="route">
+      <h3 id="route3">🌸 梅山茶園之旅</h3>
+      <p id="desc3">太平雲梯、梅山茶園風景。<br>NT$ 3,500 起</p>
+      <img src="https://cw-image-resizer.cwg.tw/resize/uri/https%3A%2F%2Fcdn-smiletaiwan.cw.com.tw%2Farticle%2F201810%2Farticle-5bc6a8d873a6a.jpg/?w=828&format=webp" alt="梅山茶園">
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2 id="contact">📱 聯絡我們預約</h2>
+    <a href="https://line.me/ti/p/~0977269504" class="line">LINE 預約</a>
+    <a href="https://wa.me/886908232851" class="whatsapp">WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>Zhan Taxi Service © 2025</p>
+  </footer>
+
+  <script>
+    const langText = {
+      zh: {
+        title: "嘉義包車資訊",
+        slogan: "舒適專車 · 安全可靠 · 多語服務",
+        route1: "🚖 嘉義市區一日遊", desc1: "檜意森活村、文化路夜市、嘉義公園。NT$ 3,000 起",
+        route2: "🌲 阿里山一日遊", desc2: "阿里山森林遊樂區、奮起湖老街。NT$ 5,000 起",
+        route3: "🌸 梅山茶園之旅", desc3: "太平雲梯、梅山茶園風景。NT$ 4,000 起",
+        contact: "📱 聯絡我們預約"
+      },
+      en: {
+        title: "Chiayi Charter Service",
+        slogan: "Comfortable · Safe · Multi-language",
+        route1: "🚖 Chiayi City Day Tour", desc1: "Hinoki Village, Wenhua Night Market, Chiayi Park. From NT$ 3,000",
+        route2: "🌲 Alishan Day Tour", desc2: "Alishan Forest, Fenqihu Old Street. From NT$ 5,000",
+        route3: "🌸 Meishan Tea Tour", desc3: "Taiping Suspension Bridge, Tea Garden Views. From NT$ 4,000",
+        contact: "📱 Contact & Booking"
+      },
+      vi: {
+        title: "Thông tin thuê xe Gia Nghĩa",
+        slogan: "Xe riêng thoải mái · An toàn · Hỗ trợ đa ngôn ngữ",
+        route1: "🚖 Tham quan Gia Nghĩa 1 ngày", desc1: "Làng Hinoki, Chợ đêm Văn Hóa, Công viên Gia Nghĩa. Từ 3,000 NT$",
+        route2: "🌲 Tham quan Alishan 1 ngày", desc2: "Khu rừng Alishan, Phố cổ Fenqihu. Từ 5,000 NT$",
+        route3: "🌸 Chuyến đi trà Meishan", desc3: "Cầu treo Taiping, phong cảnh đồi trà. Từ 4,000 NT$",
+        contact: "📱 Liên hệ đặt xe"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("title").innerText = langText[lang].title;
+      document.getElementById("slogan").innerText = langText[lang].slogan;
+      document.getElementById("route1").innerText = langText[lang].route1;
+      document.getElementById("desc1").innerText = langText[lang].desc1;
+      document.getElementById("route2").innerText = langText[lang].route2;
+      document.getElementById("desc2").innerText = langText[lang].desc2;
+      document.getElementById("route3").innerText = langText[lang].route3;
+      document.getElementById("desc3").innerText = langText[lang].desc3;
+      document.getElementById("contact").innerText = langText[lang].contact;
+    }
+  </script>
+</body>
+</html>
